@@ -1,0 +1,31 @@
+{
+  "name": "fshy2023_part3",
+  "version": "1.0.0",
+  "description": "FSHY2023 part3",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RitaMilk/FSHY2023_part3.git"
+  },
+  "keywords": [
+    "FSHY2023",
+    "part3"
+  ],
+  "author": "Rita Milk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RitaMilk/FSHY2023_part3/issues"
+  },
+  "homepage": "https://github.com/RitaMilk/FSHY2023_part3#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
