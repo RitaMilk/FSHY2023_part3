@@ -1,6 +1,12 @@
 const express = require('express')
 const app = express()
 app.use(express.json())
+morgan = require('morgan')
+morgan.token('type', function (req, res) { return req.headers['content-type'] })
+morgan.token('body', function (req, res) { return JSON.stringify(req.body) })
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms  :type  :body'))
+
+//app.use(morgan('tiny'))
 
 let persons = [
     { id:1, name: 'Arto Hellas', number: '040-123456' },
@@ -65,7 +71,7 @@ let persons = [
 
   const persons1 = persons.filter(p => p.name === body.name)
   console.log('filtered by post name=',persons1)
-  if (persons1) {
+  if (persons1.length>0) {
     return response.status(400).json({ 
       error: 'name must be unique' 
     })
