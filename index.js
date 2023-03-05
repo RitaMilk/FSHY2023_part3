@@ -6,6 +6,11 @@ morgan.token('type', function (req, res) { return req.headers['content-type'] })
 morgan.token('body', function (req, res) { return JSON.stringify(req.body) })
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms  :type  :body'))
 
+const cors = require('cors')
+app.use(cors())
+
+app.use(express.static('build'))
+
 //app.use(morgan('tiny'))
 
 let persons = [
@@ -92,7 +97,9 @@ let persons = [
   
   app.use(unknownEndpoint)
 
-const PORT = 3001
+//const PORT = 3001
+const PORT = process.env.PORT || 3001
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
