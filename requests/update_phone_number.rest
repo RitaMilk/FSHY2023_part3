@@ -1,0 +1,7 @@
+PUT  http://localhost:3001/api/phones/640c4ca42b7d959e39c72c37
+Content-Type: application/json
+
+{
+"name": "UpdateMe",
+"number": "55-66"
+}
